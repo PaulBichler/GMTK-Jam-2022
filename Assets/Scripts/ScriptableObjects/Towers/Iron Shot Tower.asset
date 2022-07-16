@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
   m_Name: Iron Shot Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: f14e10e25c67c5c429716af61ed62ff9, type: 3}
+  iconSprite: {fileID: 21300000, guid: 10c4ab05311edeb4798f233def284fde, type: 3}
   specialAbility: {fileID: 0}
   damage: 5
   attackRange: 2
   attackSpeed: 2
   shopWeight: 7
-  description: Incredible power at short range. That is everything the Iron Shot
-    Tower is about.
+  description: Incredible power at short range.

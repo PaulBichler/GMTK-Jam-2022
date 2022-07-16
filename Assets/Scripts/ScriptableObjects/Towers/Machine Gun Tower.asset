@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
   m_Name: Machine Gun Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: 5617653f19825e347b8724b4a38222a3, type: 3}
+  iconSprite: {fileID: 21300000, guid: 0625f32fea410a2439d580642b34a151, type: 3}
   specialAbility: {fileID: 0}
   damage: 2
   attackRange: 3
