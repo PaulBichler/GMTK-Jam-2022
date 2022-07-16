@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017774, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ShopTower
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017775, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: shop
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017774, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ShopTower
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017775, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: shop
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017774, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ShopTower
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017775, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: shop
@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017774, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ShopTower
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017775, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: shop
@@ -1233,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017774, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ShopTower
       objectReference: {fileID: 0}
     - target: {fileID: 4643204006156017775, guid: 3e1a85edd94c1954f8821daa07ef6d08, type: 3}
       propertyPath: shop
