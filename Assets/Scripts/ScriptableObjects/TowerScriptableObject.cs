@@ -21,7 +21,11 @@ public class TowerScriptableObject : ScriptableObject
     [Title("SpecialAbility", bold: false)]
     [HideLabel]
     public SpecialAbilityScriptableObject specialAbility;
-
+    
+    [Title("Type", bold: false)]
+    [HideLabel]
+    public TowerType type;
+    
     [Title("Damage", bold: false)]
     [HideLabel]
     [Range(0.1f, 50.0f)]
@@ -36,6 +40,10 @@ public class TowerScriptableObject : ScriptableObject
     [HideLabel]
     [Range(0.1f, 50.0f)]
     public float attackSpeed = 1;
+    
+    [Title("Projectile", bold: false)]
+    [HideLabel]
+    public ProjectileData projectileData;
 
     [Title("ShopWeight", bold: false)]
     [HideLabel]
@@ -50,3 +58,8 @@ public class TowerScriptableObject : ScriptableObject
 }
 
 //public enum SpecialAbilityEnum { Basic, Fire, Ice, Lightning };
+
+public enum TowerType
+{
+    Normal
+}

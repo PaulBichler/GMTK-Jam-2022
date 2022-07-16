@@ -7,13 +7,13 @@ public class TowerFactory : MonoBehaviour
     [Serializable]
     private struct TowerDictionaryData
     {
-        public TowerData dataKey;
+        public TowerScriptableObject dataKey;
         public GameObject prefabValue;
     }
 
     [SerializeField] private List<TowerDictionaryData> towerPrefabDictionary;
 
-    private Dictionary<TowerData, GameObject> _towerPrefabs;
+    private Dictionary<TowerScriptableObject, GameObject> _towerPrefabs;
 
     public static TowerFactory Instance { get; private set; }
 
@@ -24,14 +24,14 @@ public class TowerFactory : MonoBehaviour
         else
             Instance = this;
 
-        _towerPrefabs = new Dictionary<TowerData, GameObject>();
+        _towerPrefabs = new Dictionary<TowerScriptableObject, GameObject>();
 
         foreach (var dictionaryData in towerPrefabDictionary)
             _towerPrefabs.Add(dictionaryData.dataKey, dictionaryData.prefabValue);
 
     }
 
-    public TowerBase CreateTower(TowerData data)
+    public TowerBase CreateTower(TowerScriptableObject data)
     {
         if (!_towerPrefabs.ContainsKey(data))
         {
@@ -45,7 +45,7 @@ public class TowerFactory : MonoBehaviour
         //return SetupTower(tower, data);
     }
 
-    private TowerBase SetupTower(GameObject instance, TowerData data)
+    private TowerBase SetupTower(GameObject instance, TowerScriptableObject data)
     {
         switch (data.type)
         {
@@ -56,7 +56,7 @@ public class TowerFactory : MonoBehaviour
         return null;
     }
 
-    private NormalTower CreateNormalTower(GameObject instance, TowerData data)
+    private NormalTower CreateNormalTower(GameObject instance, TowerScriptableObject data)
     {
         var normalTower =  instance.GetComponent<NormalTower>();
         normalTower.InitializeTower(data);

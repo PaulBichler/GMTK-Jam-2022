@@ -12,7 +12,7 @@ public abstract class TowerBase : PlaceableUnit
 {
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
-    protected TowerData Data;
+    protected TowerScriptableObject Data;
     protected TowerEntityDetector EntityDetector;
     protected bool IsInitialized;
 
@@ -28,13 +28,13 @@ public abstract class TowerBase : PlaceableUnit
         EntitiesInRange = new List<GameObject>();
     }
 
-    public virtual void InitializeTower(TowerData data)
+    public virtual void InitializeTower(TowerScriptableObject data)
     {
         if (IsInitialized) return;
         
         Data = Instantiate(data);
-        spriteRenderer.sprite = Data.sprite;
-        EntityDetector.Initialize(this, Data.range);
+        spriteRenderer.sprite = Data.iconSprite;
+        EntityDetector.Initialize(this, Data.attackRange);
         IsInitialized = true;
     }
     

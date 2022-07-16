@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a965cb2772c6740861656311fd4e85, type: 3}
-  m_Name: TestTower
+  m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
+  m_Name: Ice Tower
   m_EditorClassIdentifier: 
+  iconSprite: {fileID: 21300000, guid: eb70c7ff0c08608469d0789c712ba2cb, type: 3}
+  specialAbility: {fileID: 0}
   type: 0
-  sprite: {fileID: -2413806693520163455, guid: 102b011f6ed4c7e4a89958385049d97d, type: 3}
-  damage: 1
-  range: 4
-  attackSpeed: 2
+  damage: 50
+  attackRange: 50
+  attackSpeed: 50
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  shopWeight: 10
+  description: 

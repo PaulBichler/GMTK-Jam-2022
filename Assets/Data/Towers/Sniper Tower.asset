@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
-  m_Name: Iron Shot Tower
+  m_Name: Sniper Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: f14e10e25c67c5c429716af61ed62ff9, type: 3}
+  iconSprite: {fileID: 21300000, guid: cbee577be68c9284791be1ee31d602d7, type: 3}
   specialAbility: {fileID: 0}
+  type: 0
   damage: 5
-  attackRange: 2
-  attackSpeed: 2
+  attackRange: 5
+  attackSpeed: 1
+  projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
   shopWeight: 7
-  description: Incredible power at short range. That is everything the Iron Shot
-    Tower is about.
+  description: A tower with immense damage and incredible range. However, it does
+    not shoot very fast.

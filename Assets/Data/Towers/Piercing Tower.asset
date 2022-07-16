@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
-  m_Name: Attack Speed Influencer Tower
+  m_Name: Piercing Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: 25eca1b7937fe6f408a5d643a62ee4c7, type: 3}
+  iconSprite: {fileID: 21300000, guid: 6a38ac0ac7ba3474589f9fcd57994fa1, type: 3}
   specialAbility: {fileID: 0}
-  damage: 0.1
-  attackRange: 2
-  attackSpeed: 0.1
-  shopWeight: 3
-  description: 
+  type: 0
+  damage: 2
+  attackRange: 3
+  attackSpeed: 3
+  projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  shopWeight: 5
+  description: Hit multiple enemies in a row with a single projectile.

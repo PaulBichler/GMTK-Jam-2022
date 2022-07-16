@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
         baseHealth--;
     }
 
-    public PlaceableUnit SpawnTower(TowerData data)
+    public PlaceableUnit SpawnTower(TowerScriptableObject data)
     {
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         var newTower = TowerFactory.Instance.CreateTower(data);

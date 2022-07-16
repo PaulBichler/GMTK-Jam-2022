@@ -15,7 +15,7 @@ public class Shop : MonoBehaviour
 
     void PopulateList()
     {
-        string[] assetNames = AssetDatabase.FindAssets("Tower", new[] { "Assets/Scripts/ScriptableObjects/Towers" });
+        string[] assetNames = AssetDatabase.FindAssets("Tower", new[] { "Assets/Data/Towers" });
         towerList.Clear();
         foreach (string SOName in assetNames)
         {

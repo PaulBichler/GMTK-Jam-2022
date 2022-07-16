@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private TowerData tower;
+    [SerializeField] private TowerScriptableObject tower;
 
     private PlaceableUnit _spawnedTower;
     private Image _image;
@@ -14,7 +13,7 @@ public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         _image = GetComponent<Image>();
         
-        if(tower) _image.sprite = tower.sprite;
+        if(tower) _image.sprite = tower.iconSprite;
     }
 
     public void OnPointerDown(PointerEventData eventData)
