@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private List<Transform> path;
+    private List<Transform> path = new List<Transform>();
     [SerializeField] private WaveData waveData;
+    [SerializeField] private Transform pathParent;
+
 
     private List<Enemy> _activeEnemies;
 
     private void Awake()
     {
         _activeEnemies = new List<Enemy>();
+        foreach (Transform child in pathParent) {
+            //Debug.Log(child.transform);
+            path.Add(child.transform);
+        }
         StartCoroutine(StartWave(waveData));
+        Debug.Log(path[0]);
     }
 
     private IEnumerator StartWave(WaveData wave)
