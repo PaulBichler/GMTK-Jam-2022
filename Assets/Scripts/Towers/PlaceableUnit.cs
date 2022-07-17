@@ -1,32 +1,37 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class PlaceableUnit : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class PlaceableUnit : MonoBehaviour, IPointerDownHandler
 {
-    private bool _isDragging;
+    private bool _isPlacing;
     private bool _isPlaced;
+
+    public UnityEvent OnPlaced { get; } = new();
 
     protected virtual void Update()
     {
-        if (_isDragging)
+        if (_isPlacing)
             transform.position = (Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        if(_isPlaced) return;
+        if (_isPlaced) return;
         
-        _isDragging = true;
-    }
+        if (_isPlacing)
+        {
+            OnPlace();
+            return;
+        }
 
-    public virtual void OnPointerUp(PointerEventData eventData)
-    {
-        _isDragging = false;
-        OnPlace();
+        _isPlacing = true;
     }
 
     public virtual void OnPlace()
     {
         _isPlaced = true;
+        _isPlacing = false;
+        OnPlaced?.Invoke();
     }
 }

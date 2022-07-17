@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class TowerButton : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TowerScriptableObject tower;
 
@@ -39,13 +39,7 @@ public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         
         _spawnedTower = PlayerManager.Instance.SpawnTower(tower);
         _spawnedTower.OnPointerDown(eventData);
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (!_spawnedTower) return;
-        
-        _spawnedTower.OnPointerUp(eventData);
+        //_spawnedTower.OnPlaced.AddListener(() => SetTower(null));
         SetTower(null);
     }
 

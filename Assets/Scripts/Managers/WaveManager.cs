@@ -36,7 +36,8 @@ public class WaveManager : MonoBehaviour
         
         if(onWaveEnd != null)
             OnWaveEnd.AddListener(onWaveEnd);
-        
+
+        _enemyDeathCount = 0;
         StartCoroutine(StartWaveCoroutine(waves[++_currentWaveIndex]));
     }
 
