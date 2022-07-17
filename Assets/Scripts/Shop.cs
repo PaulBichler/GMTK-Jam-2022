@@ -6,6 +6,8 @@ using UnityEditor;
 
 public class Shop : MonoBehaviour
 {
+    public List<TowerScriptableObject> towerInitialSetupList = new List<TowerScriptableObject>();
+
     public List<TowerScriptableObject> towerList = new List<TowerScriptableObject>();
 
     public List<TowerScriptableObject> selectedTowerList = new List<TowerScriptableObject>();
@@ -17,14 +19,10 @@ public class Shop : MonoBehaviour
 
     void PopulateList()
     {
-        string[] assetNames = AssetDatabase.FindAssets("Tower", new[] { "Assets/Data/Towers" });
         towerList.Clear();
-        foreach (string SOName in assetNames)
+        foreach (TowerScriptableObject child in towerInitialSetupList)
         {
-            string SOpath = AssetDatabase.GUIDToAssetPath(SOName);
-            TowerScriptableObject tower = AssetDatabase.LoadAssetAtPath<TowerScriptableObject>(SOpath);
-
-            for (int i = 0; i < tower.shopWeight; i++) towerList.Add(tower);
+            for (int i = 0; i < child.shopWeight; i++) towerList.Add(child);
         }
     }
 

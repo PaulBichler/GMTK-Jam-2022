@@ -190,6 +190,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a20cbe00ff0cc4db0c5b720d7d1c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInitialSetupList:
+  - {fileID: 11400000, guid: cbedcdd97c218df45afc4632703449a4, type: 2}
+  - {fileID: 11400000, guid: 511aa7a0e09559a4b8cc00e7da1f51a7, type: 2}
+  - {fileID: 11400000, guid: 367b26789b3602c41b0170dbce4f133d, type: 2}
+  - {fileID: 11400000, guid: 5957feadc704ba247b1743ac5aa2059e, type: 2}
+  - {fileID: 11400000, guid: eb34bdcae539536469aa73a40d803972, type: 2}
+  - {fileID: 11400000, guid: 0edd4f548c5324a47a9701497b74bf93, type: 2}
+  - {fileID: 11400000, guid: 6bf06ce6b1b08a64e9c680f4fa536150, type: 2}
+  - {fileID: 11400000, guid: 0561ddee538ad8f45ae01366e6141904, type: 2}
+  - {fileID: 11400000, guid: 4315fb97ad1446a4a8b700ad52b32ce6, type: 2}
+  - {fileID: 11400000, guid: 20da37c586cf8f346a08e0bab8f961c2, type: 2}
+  - {fileID: 11400000, guid: 4ff2d461d62be3346baa6a5d23690915, type: 2}
   towerList: []
   selectedTowerList: []
   towerDisplayList: []
