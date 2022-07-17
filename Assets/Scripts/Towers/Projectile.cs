@@ -2,33 +2,32 @@
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed;
-
-    private Rigidbody2D _rb2d;
-    private DamageInfo _damageInfo;
+    protected Rigidbody2D Rb2d;
+    protected DamageInfo DamageInfo;
+    protected float Speed;
 
     private void Awake()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
+        Rb2d = GetComponent<Rigidbody2D>();
     }
 
     public void Initialize(ProjectileData data)
     {
-        speed = data.speed;
+        Speed = data.speed;
     }
 
-    public void LaunchBullet(Transform owner, Transform target, DamageInfo damageInfo)
+    public virtual void LaunchBullet(Transform owner, Transform target, DamageInfo damageInfo)
     {
         Vector2 dir = (target.position - owner.position).normalized;
-        _rb2d.velocity = dir * speed;
-        _damageInfo = damageInfo;
+        Rb2d.velocity = dir * Speed;
+        DamageInfo = damageInfo;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.TryGetComponent<Enemy>(out var enemy))
         {
-            enemy.ReceiveDamage(_damageInfo);
+            enemy.ReceiveDamage(DamageInfo);
             Destroy(gameObject);
         }
     }

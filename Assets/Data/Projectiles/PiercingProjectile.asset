@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a831a5356f4d84f99d5b4d2b5b2974, type: 3}
-  m_Name: TestProjectile
+  m_Name: PiercingProjectile
   m_EditorClassIdentifier: 
   sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   speed: 15
