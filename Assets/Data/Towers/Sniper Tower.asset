@@ -16,9 +16,9 @@ MonoBehaviour:
   specialAbility: {fileID: 0}
   type: 0
   damage: 5
-  attackRange: 5
+  attackRange: 10
   attackSpeed: 1
-  projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  projectileData: {fileID: 11400000, guid: 969d9a70c92624440b389c298b2eab91, type: 2}
   shopWeight: 7
   description: A tower with immense damage and incredible range. However, it does
     not shoot very fast.
