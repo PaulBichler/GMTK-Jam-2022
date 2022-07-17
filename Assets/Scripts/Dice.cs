@@ -38,6 +38,7 @@ public class Dice : MonoBehaviour
             TowerDiceHand.InformationCanvas.enabled = true;
             //TowerDiceHand.ProceedButton.enabled = true;
             UiManager.Instance.nextButton.gameObject.SetActive(true);
+            UiManager.Instance.nextButtonCanvas.enabled = true;
             TowerDiceHand.CloseSelectedDiceButton.enabled =false;
         }
     }
@@ -60,6 +61,7 @@ public class Dice : MonoBehaviour
                 TowerDiceHand.RollDiceButton.enabled = false;
                 //TowerDiceHand.ProceedButton.enabled = false;
                 UiManager.Instance.nextButton.gameObject.SetActive(false);
+                UiManager.Instance.nextButtonCanvas.enabled = false;
                 TowerDiceHand.InformationCanvas.enabled = false;
                 TowerDiceHand.CloseSelectedDiceButton.enabled = true;
             }

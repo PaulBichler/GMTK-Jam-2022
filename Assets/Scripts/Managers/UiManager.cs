@@ -12,6 +12,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject backgroundPanel;
     [SerializeField] private UiAnnouncer announcer;
     public Button nextButton;
+    public Canvas nextButtonCanvas;
     [SerializeField] private Shop shop;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private List<TowerButton> towerButtons;
@@ -104,6 +105,7 @@ public class UiManager : MonoBehaviour
 
     public void EnableNextButton(string buttonText, UnityAction onNextClick)
     {
+        nextButtonCanvas.enabled = true;
         nextButton.gameObject.SetActive(true);
         nextButton.GetComponentInChildren<TextMeshProUGUI>().SetText(buttonText);
         nextButton.onClick.AddListener(onNextClick);
@@ -111,6 +113,7 @@ public class UiManager : MonoBehaviour
 
     public void DisableNextButton()
     {
+        nextButtonCanvas.enabled = false;
         nextButton.GetComponentInChildren<TextMeshProUGUI>().SetText("");
         nextButton.onClick.RemoveAllListeners();
         nextButton.gameObject.SetActive(false);
