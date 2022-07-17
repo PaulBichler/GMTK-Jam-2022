@@ -19,6 +19,7 @@ MonoBehaviour:
   attackRange: 4
   attackSpeed: 2
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  getRandomStats: 0
   statRangeData: {fileID: 0}
-  shopWeight: 3
+  shopWeight: 0
   description: 

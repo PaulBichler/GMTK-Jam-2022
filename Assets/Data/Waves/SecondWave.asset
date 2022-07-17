@@ -33,3 +33,7 @@ MonoBehaviour:
     waitAfterSpawn: 0.5
   - enemyData: {fileID: 11400000, guid: bbfd2d8641fd92241b4e595cac5c1505, type: 2}
     waitAfterSpawn: 0.5
+  - enemyData: {fileID: 11400000, guid: bbfd2d8641fd92241b4e595cac5c1505, type: 2}
+    waitAfterSpawn: 0.5
+  - enemyData: {fileID: 11400000, guid: bbfd2d8641fd92241b4e595cac5c1505, type: 2}
+    waitAfterSpawn: 0.5
