@@ -17,4 +17,4 @@ MonoBehaviour:
   minAttackSpeed: 1
   maxAttackSpeed: 15
   minAttackRange: 3
-  maxAttackRange: 40
+  maxAttackRange: 20
