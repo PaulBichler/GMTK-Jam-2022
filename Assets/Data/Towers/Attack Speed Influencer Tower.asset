@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
   m_Name: Attack Speed Influencer Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: ffd2674e7a58103419539cf517485cec, type: 3}
+  iconSprite: {fileID: 21300000, guid: bc11dba47b321ea4d91ba9920c8255fc, type: 3}
   specialAbility: {fileID: 0}
   type: 0
   damage: 0.1
-  attackRange: 6
+  attackRange: 2
   attackSpeed: 0.1
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
   getRandomStats: 0
