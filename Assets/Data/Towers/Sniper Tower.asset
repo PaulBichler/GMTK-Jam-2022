@@ -16,7 +16,7 @@ MonoBehaviour:
   specialAbility: {fileID: 0}
   type: 0
   damage: 30
-  attackRange: 30
+  attackRange: 15
   attackSpeed: 1
   projectileData: {fileID: 11400000, guid: 969d9a70c92624440b389c298b2eab91, type: 2}
   getRandomStats: 0
