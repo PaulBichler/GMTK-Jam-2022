@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -17,19 +15,25 @@ public class PlaceableUnit : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         if (_isPlacing)
         {
             transform.position = (Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            
+            _isValidPlacement = CheckPlacement();
+        }
+    }
 
-            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 1.3f);
-
-            _isValidPlacement = true;
-            if (cols.Length > 0)
+    protected virtual bool CheckPlacement()
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 1.3f);
+        
+        if (cols.Length > 0)
+        {
+            foreach (var col in cols)
             {
-                foreach (var col in cols)
-                {
-                    if (col.gameObject != gameObject && (col.gameObject.CompareTag("Tower") || col.gameObject.CompareTag("Path")))
-                        _isValidPlacement = false;
-                }
+                if (col.gameObject != gameObject && (col.gameObject.CompareTag("Tower") || col.gameObject.CompareTag("Path")))
+                    return false;
             }
         }
+
+        return true;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)

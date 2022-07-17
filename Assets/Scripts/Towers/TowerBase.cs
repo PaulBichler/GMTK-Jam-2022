@@ -77,4 +77,22 @@ public abstract class TowerBase : PlaceableUnit
     {
         rangeVisualiser.gameObject.SetActive(false);
     }
+
+    protected override bool CheckPlacement()
+    { 
+        bool isValidPlacement = base.CheckPlacement();
+
+       if (!isValidPlacement)
+       {
+           Color color = Color.red;
+           color.a = 0.7f;
+           spriteRenderer.color = color;
+       }
+       else
+       {
+           spriteRenderer.color = Color.white;
+       }
+
+       return isValidPlacement;
+    }
 }
