@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public enum TowerState
@@ -12,6 +13,7 @@ public enum TowerState
 public abstract class TowerBase : PlaceableUnit
 {
     [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] private Transform rangeVisualiser;
 
     protected TowerScriptableObject Data;
     protected TowerEntityDetector EntityDetector;
@@ -64,5 +66,15 @@ public abstract class TowerBase : PlaceableUnit
         yield return new WaitForSeconds(time);
         State = TowerState.Idle;
         onTimerEnd?.Invoke();
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        rangeVisualiser.gameObject.SetActive(true);
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        rangeVisualiser.gameObject.SetActive(false);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class PlaceableUnit : MonoBehaviour, IPointerDownHandler
+public class PlaceableUnit : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private bool _isPlacing;
     private bool _isPlaced;
@@ -39,5 +39,13 @@ public class PlaceableUnit : MonoBehaviour, IPointerDownHandler
         
         if (UiManager.Instance)
             UiManager.Instance.ShowTowerSelection();
+    }
+
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+    }
+
+    public virtual void OnPointerExit(PointerEventData eventData)
+    {
     }
 }

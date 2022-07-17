@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TowerEntityDetector : MonoBehaviour
 {
+    [SerializeField] private Transform radiusCircle;
+
     private CircleCollider2D _col;
     private TowerBase _owner;
 
@@ -19,6 +21,7 @@ public class TowerEntityDetector : MonoBehaviour
     public void SetRange(float range)
     {
         _col.radius = range;
+        radiusCircle.localScale = new Vector3(range * 2, range * 2, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
