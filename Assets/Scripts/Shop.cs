@@ -11,6 +11,8 @@ public class Shop : MonoBehaviour
     public List<TowerScriptableObject> selectedTowerList = new List<TowerScriptableObject>();
     public List<TowerDisplay> towerDisplayList = new List<TowerDisplay>();
 
+    public List<TowerScriptableObject> boughtTowerScriptableObjectList = new List<TowerScriptableObject>();
+
     public Currency currency;
 
     void PopulateList()
@@ -60,6 +62,7 @@ public class Shop : MonoBehaviour
 
     public void StartShop()
     {
+        boughtTowerScriptableObjectList.Clear();
         currency.ResetCurrency();
         GetShopOptions();
     }
@@ -71,5 +74,20 @@ public class Shop : MonoBehaviour
             ToggleShop(true);
             GetShopOptions();
         }
+    }
+
+    private void OnEnable()
+    {
+        GetShopOptions();
+    }
+
+    public List<TowerScriptableObject> SendBoughtTowersForCustomization()
+    {
+        return boughtTowerScriptableObjectList;
+    }
+
+    public int SendCurrencyForCustomization()
+    {
+        return currency.currency;
     }
 }

@@ -23,6 +23,8 @@ public class TowerDiceHand : MonoBehaviour
 
     public Currency currency;
 
+    public Shop shop;
+
     public void CheckForSwap()
     {
         int backupTowerIndex = -1;
@@ -215,10 +217,38 @@ public class TowerDiceHand : MonoBehaviour
         }
     }
 
+    public void FillRemainingTowersFromDiceToBattle()
+    {
+        foreach (Dice child in allDiceList)
+        {
+            if (child.selectedTowerScriptableObject != null)
+            {
+                AddTowerForBattle(child);
+            }
+        }
+
+    }
+
+    private void OnDisable()
+    {
+        FillRemainingTowersFromDiceToBattle();
+        foreach (TowerScriptableObject child in SelectedTowersForBattle)
+        {
+            UiManager.Instance.AddTowerToSelection(child);
+        }
+    }
+
+    void OnEnable()
+    {
+        GetHandFromShop(shop.SendBoughtTowersForCustomization());
+        currency.currency = shop.currency.currency;
+        currency.UpdateCurrency();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GetHandFromShop(helperList);
+        //GetHandFromShop(helperList);
     }
 
     // Update is called once per frame

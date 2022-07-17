@@ -36,7 +36,8 @@ public class Dice : MonoBehaviour
             TowerDiceHand.RollDiceButton.enabled = false;
 
             TowerDiceHand.InformationCanvas.enabled = true;
-            TowerDiceHand.ProceedButton.enabled = true;
+            //TowerDiceHand.ProceedButton.enabled = true;
+            UiManager.Instance.nextButton.gameObject.SetActive(true);
             TowerDiceHand.CloseSelectedDiceButton.enabled =false;
         }
     }
@@ -57,7 +58,8 @@ public class Dice : MonoBehaviour
                 isDiceOpen = true;
                 TowerDiceHand.currency.HideCurrency();
                 TowerDiceHand.RollDiceButton.enabled = false;
-                TowerDiceHand.ProceedButton.enabled = false;
+                //TowerDiceHand.ProceedButton.enabled = false;
+                UiManager.Instance.nextButton.gameObject.SetActive(false);
                 TowerDiceHand.InformationCanvas.enabled = false;
                 TowerDiceHand.CloseSelectedDiceButton.enabled = true;
             }

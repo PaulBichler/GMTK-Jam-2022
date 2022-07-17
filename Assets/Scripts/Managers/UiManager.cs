@@ -11,10 +11,13 @@ public class UiManager : MonoBehaviour
     
     [SerializeField] private GameObject backgroundPanel;
     [SerializeField] private UiAnnouncer announcer;
-    [SerializeField] private Button nextButton;
+    public Button nextButton;
     [SerializeField] private Shop shop;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private List<TowerButton> towerButtons;
+    [SerializeField] private TowerDiceHand towerDiceHand;
+    [SerializeField] private GameObject towerDiceHandPanel;
+
 
     private void Awake()
     {
@@ -34,10 +37,48 @@ public class UiManager : MonoBehaviour
         shop.ToggleShop(true);
         shop.StartShop();
 
-        EnableNextButton("Next Wave", onNextClick);
+        //if(onNextClick == null)
+        EnableNextButton("Proceed To Customization", onNextClick);
+    }
+
+    public void TransitionToDiceCustomization(UnityAction onNextClick)
+    {
+        HideShop();
+        DisableNextButton();
+
+        towerDiceHandPanel.SetActive(true);
+        shop.StartShop();
+
+        EnableNextButton("Proceed To Rolling", onNextClick);
+    }
+    
+    public void TransitionToDiceRolling(UnityAction onNextClick)
+    {
+        towerDiceHand.ProceedPhase();
+        DisableNextButton();
+
+        EnableNextButton("Start Round", onNextClick);
+    }
+
+    public void HideRolling()
+    {
+        backgroundPanel.SetActive(false);
+        towerDiceHand.ProceedPhase();
+        towerDiceHandPanel.SetActive(false);
+    }
+
+    public void HideCustomization()
+    {
+        towerDiceHand.ProceedPhase();
     }
 
     public void HideShop()
+    {
+        //backgroundPanel.SetActive(false);
+        shopPanel.SetActive(false);
+    }
+
+    public void HideDiceCustomization()
     {
         backgroundPanel.SetActive(false);
         shopPanel.SetActive(false);
