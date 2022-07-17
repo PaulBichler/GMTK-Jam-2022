@@ -17,5 +17,5 @@ MonoBehaviour:
   damage: 0.1
   attackRange: 2
   attackSpeed: 0.1
-  shopWeight: 3
-  description: 
+  shopWeight: 2
+  description: Boost your nearby towers by increasing their Damage.

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 0625f32fea410a2439d580642b34a151, type: 3}
   specialAbility: {fileID: 0}
-  damage: 2
+  damage: 10
   attackRange: 3
-  attackSpeed: 5
-  shopWeight: 7
+  attackSpeed: 10
+  shopWeight: 5
   description: A tower with unfathomable attack speed. Its range and damage however
     are not up to par.

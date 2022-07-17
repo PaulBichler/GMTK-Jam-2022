@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconSprite: {fileID: 21300000, guid: 10c4ab05311edeb4798f233def284fde, type: 3}
   specialAbility: {fileID: 0}
-  damage: 5
+  damage: 45
   attackRange: 2
-  attackSpeed: 2
-  shopWeight: 7
-  description: Incredible power at short range.
+  attackSpeed: 1
+  shopWeight: 5
+  description: The Iron Shot tower provides incredible power at short range.
