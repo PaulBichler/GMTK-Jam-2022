@@ -19,6 +19,7 @@ MonoBehaviour:
   attackRange: 0.1
   attackSpeed: 0.1
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  getRandomStats: 1
   statRangeData: {fileID: 11400000, guid: d4e7e7e3daa86c746a9537f820d13223, type: 2}
   shopWeight: 4
   description: Randomly changes its stats at the start of each round.

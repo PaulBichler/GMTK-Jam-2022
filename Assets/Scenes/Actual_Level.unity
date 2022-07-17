@@ -13603,6 +13603,12 @@ MonoBehaviour:
     prefabValue: {fileID: 3951102024610099407, guid: 219d847351e5ab14db5d2cc52632cc88, type: 3}
   - dataKey: {fileID: 11400000, guid: 20da37c586cf8f346a08e0bab8f961c2, type: 2}
     prefabValue: {fileID: 3951102024610099407, guid: 219d847351e5ab14db5d2cc52632cc88, type: 3}
+  - dataKey: {fileID: 11400000, guid: 4315fb97ad1446a4a8b700ad52b32ce6, type: 2}
+    prefabValue: {fileID: 3744692692636909040, guid: 8ba2c977e0a4e6b47addd49fe3c97208, type: 3}
+  - dataKey: {fileID: 11400000, guid: cbedcdd97c218df45afc4632703449a4, type: 2}
+    prefabValue: {fileID: 3744692692636909040, guid: 8ba2c977e0a4e6b47addd49fe3c97208, type: 3}
+  - dataKey: {fileID: 11400000, guid: 367b26789b3602c41b0170dbce4f133d, type: 2}
+    prefabValue: {fileID: 3744692692636909040, guid: 8ba2c977e0a4e6b47addd49fe3c97208, type: 3}
 --- !u!114 &1477397852
 MonoBehaviour:
   m_ObjectHideFlags: 0

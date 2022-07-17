@@ -45,7 +45,11 @@ public class TowerScriptableObject : ScriptableObject
     [HideLabel]
     public ProjectileData projectileData;
     
-    [Title("Stat Range (for Roll Tower)", bold: false)]
+    [Title("Get Random Stats (for Roll Tower)", bold: false)]
+    [HideLabel]
+    public bool getRandomStats;
+    
+    [Title("Stat Range (for Roll Tower & Influencers)", bold: false)]
     [HideLabel]
     public StatRangeData statRangeData;
 

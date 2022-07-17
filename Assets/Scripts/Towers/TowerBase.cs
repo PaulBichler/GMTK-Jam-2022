@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +35,7 @@ public abstract class TowerBase : PlaceableUnit
         
         Data = Instantiate(data);
 
-        if (Data.statRangeData)
+        if (Data.getRandomStats && Data.statRangeData)
         {
             var statRanges = Data.statRangeData;
             Data.damage = Random.Range(statRanges.minDamage, statRanges.maxDamage);
@@ -58,7 +57,7 @@ public abstract class TowerBase : PlaceableUnit
     {
         EntitiesInRange.Remove(entity);
     }
-    
+
     protected virtual IEnumerator StartCooldownTimer(float time, System.Action onTimerEnd)
     {
         State = TowerState.Cooldown;

@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class AttackTowerBase : TowerBase
 {
-    [SerializeField] protected GameObject bulletPrefab;
-    
     protected List<Enemy> EnemiesInRange;
 
     protected override void Awake()
@@ -21,6 +19,20 @@ public class AttackTowerBase : TowerBase
         EnemiesInRange.Add(enemy);
         enemy.onDeath.AddListener(OnEnemyDeath); 
         TryAttack();
+    }
+    
+    public virtual void AddToStats(StatRangeData statData)
+    {
+        Data.damage += statData.minDamage;
+        Data.attackRange += statData.minAttackRange;
+        Data.attackSpeed += statData.minAttackSpeed;
+    }
+
+    public virtual void RemoveFromStats(StatRangeData statData)
+    {
+        Data.damage -= statData.minDamage;
+        Data.attackRange -= statData.minAttackRange;
+        Data.attackSpeed -= statData.minAttackSpeed;
     }
 
     public override void OnEntityExitRange(GameObject entity)

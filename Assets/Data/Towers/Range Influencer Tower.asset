@@ -19,6 +19,7 @@ MonoBehaviour:
   attackRange: 2
   attackSpeed: 0.1
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  getRandomStats: 0
   statRangeData: {fileID: 11400000, guid: 6df1d98d3d5aa2a40a23e773cec4fd14, type: 2}
-  shopWeight: 2
-  description: Boost your nearby towers by increasing their Attack Range.
+  shopWeight: 3
+  description: 
