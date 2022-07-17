@@ -2,6 +2,7 @@ public class NormalTower : AttackTowerBase
 {
     protected override void Attack(Enemy target)
     {
+        if (!target) return;
         var newBullet = ProjectileFactory.Instance.CreateProjectile(Data.projectileData);
         newBullet.transform.position = transform.position;
         newBullet.Initialize(Data.projectileData);
