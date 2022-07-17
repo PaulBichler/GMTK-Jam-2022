@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        UiManager.Instance.Announce("Dicey Dungeon", 2, () =>
+        UiManager.Instance.Announce("Dicey Towers", 2, () =>
         {
             UiManager.Instance.TransitionToShop(ContinueToDiceCustomization);
         });

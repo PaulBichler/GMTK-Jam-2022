@@ -15,6 +15,7 @@ public class UiManager : MonoBehaviour
     public Canvas nextButtonCanvas;
     [SerializeField] private Shop shop;
     [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject towerSelectionPanel;
     [SerializeField] private List<TowerButton> towerButtons;
     [SerializeField] private TowerDiceHand towerDiceHand;
     [SerializeField] private GameObject towerDiceHandPanel;
@@ -122,5 +123,15 @@ public class UiManager : MonoBehaviour
     public void Announce(string message, float duration, UnityAction onEnd)
     {
         announcer.Announce(message, duration, onEnd);
+    }
+
+    public void HideTowerSelection()
+    {
+        towerSelectionPanel.SetActive(false);
+    }
+
+    public void ShowTowerSelection()
+    {
+        towerSelectionPanel.SetActive(true);
     }
 }

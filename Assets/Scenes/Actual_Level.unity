@@ -10068,6 +10068,7 @@ MonoBehaviour:
   nextButtonCanvas: {fileID: 1641039823}
   shop: {fileID: 1599904867}
   shopPanel: {fileID: 1599904865}
+  towerSelectionPanel: {fileID: 381283946}
   towerButtons:
   - {fileID: 889065506}
   - {fileID: 1518344641}

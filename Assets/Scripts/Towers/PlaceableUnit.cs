@@ -26,6 +26,9 @@ public class PlaceableUnit : MonoBehaviour, IPointerDownHandler
         }
 
         _isPlacing = true;
+
+        if (UiManager.Instance)
+            UiManager.Instance.HideTowerSelection();
     }
 
     public virtual void OnPlace()
@@ -33,5 +36,8 @@ public class PlaceableUnit : MonoBehaviour, IPointerDownHandler
         _isPlaced = true;
         _isPlacing = false;
         OnPlaced?.Invoke();
+        
+        if (UiManager.Instance)
+            UiManager.Instance.ShowTowerSelection();
     }
 }
