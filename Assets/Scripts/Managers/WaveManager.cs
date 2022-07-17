@@ -1,18 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
-    private List<Transform> path = new List<Transform>();
-    [SerializeField] private WaveData waveData;
+    [SerializeField] private List<WaveData> waves;
     [SerializeField] private Transform pathParent;
 
-
+    private readonly List<Transform> _path = new();
+    private int _currentWaveIndex = -1;
     private List<Enemy> _activeEnemies;
-    
+
     public static WaveManager Instance { get; private set; }
+    public int CurrentWave => _currentWaveIndex + 1;
+    public UnityEvent OnWaveEnd { get; } = new();
 
     private void Awake()
     {
@@ -23,15 +25,21 @@ public class WaveManager : MonoBehaviour
         
         _activeEnemies = new List<Enemy>();
         foreach (Transform child in pathParent)
-            path.Add(child.transform);
+            _path.Add(child.transform);
     }
 
-    private void Start()
+    public void StartNextWave(UnityAction onWaveEnd)
     {
-        StartCoroutine(StartWave(waveData));
+        if(_currentWaveIndex == waves.Count - 1)
+            return;
+        
+        if(onWaveEnd != null)
+            OnWaveEnd.AddListener(onWaveEnd);
+            
+        StartCoroutine(StartWaveCoroutine(waves[++_currentWaveIndex]));
     }
 
-    private IEnumerator StartWave(WaveData wave)
+    private IEnumerator StartWaveCoroutine(WaveData wave)
     {
         foreach (var enemy in wave.EnemiesToSpawn)
         {
@@ -42,10 +50,20 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnEnemy(EnemyData data)
     {
-        var enemy = EnemyFactory.Instance.CreateEnemy(data, path);
+        var enemy = EnemyFactory.Instance.CreateEnemy(data, _path);
         enemy.transform.rotation = Quaternion.identity;
-        enemy.transform.position = path[0].position;
+        enemy.transform.position = _path[0].position;
+        enemy.Initialize(data, _path);
+        enemy.onDeath.AddListener(EnemyDied);
         _activeEnemies.Add(enemy);
-        enemy.Initialize(data, path);
+    }
+
+    private void EnemyDied(Enemy enemy)
+    {
+        _activeEnemies.Remove(enemy);
+        enemy.onDeath.RemoveListener(EnemyDied);
+
+        if (_activeEnemies.Count == 0)
+            OnWaveEnd?.Invoke();
     }
 }

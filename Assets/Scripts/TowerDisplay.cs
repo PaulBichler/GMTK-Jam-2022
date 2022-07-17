@@ -50,13 +50,16 @@ public class TowerDisplay : MonoBehaviour
         attackSpeedText.enabled = isHovered;
         backgroundImage.enabled = isHovered;
 
-        canvas.sortingOrder = isHovered ? 1 : 0;
+        canvas.sortingOrder = isHovered ? 3 : 2;
     }
 
     public void BuyTower()
     {
         if(currency.CanBuyTower())
-        canvas.enabled = false;
+            canvas.enabled = false;
+        
+        if(UiManager.Instance)
+            UiManager.Instance.AddTowerToSelection(tower);
     }
 
 }

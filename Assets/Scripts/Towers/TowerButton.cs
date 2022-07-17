@@ -12,18 +12,33 @@ public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Awake()
     {
         _image = GetComponent<Image>();
-        
-        if(tower) _image.sprite = tower.iconSprite;
+        UpdateIcon();
+    }
+
+    private void UpdateIcon()
+    {
+        _image.sprite = tower ? tower.iconSprite : null;
     }
 
     public void OnPointerDown(PointerEventData eventData)
-    { 
+    {
+        if (!tower) return;
+        
         _spawnedTower = PlayerManager.Instance.SpawnTower(tower);
         _spawnedTower.OnPointerDown(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!_spawnedTower) return;
         _spawnedTower.OnPointerUp(eventData);
     }
+
+    public void SetTower(TowerScriptableObject towerData)
+    {
+        tower = towerData;
+        UpdateIcon();
+    }
+
+    public bool HasTower() => tower != null;
 }

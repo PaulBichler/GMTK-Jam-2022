@@ -40,7 +40,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    void ToggleShop(bool toggle)
+    public void ToggleShop(bool toggle)
     {
         foreach(var towerDisplay in towerDisplayList)
         {
@@ -50,7 +50,7 @@ public class Shop : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         PopulateList();
         currency.ResetCurrency();
@@ -71,13 +71,5 @@ public class Shop : MonoBehaviour
             ToggleShop(true);
             GetShopOptions();
         }
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
