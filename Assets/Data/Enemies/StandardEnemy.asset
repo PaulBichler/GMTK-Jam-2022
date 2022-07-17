@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StandardEnemy
   m_EditorClassIdentifier: 
   sprite: {fileID: -2413806693520163455, guid: 102b011f6ed4c7e4a89958385049d97d, type: 3}
-  movementSpeed: 3
+  movementSpeed: 5
   health: 200

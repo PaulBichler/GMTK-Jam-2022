@@ -3819,10 +3819,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2611324976423017447, guid: 9e8f247d147c20d4cb61b45e493d17dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56b8aa12255ecf840a31ff10fd6ca0c7, type: 3}
     - target: {fileID: 2611324977931168476, guid: 9e8f247d147c20d4cb61b45e493d17dc, type: 3}
       propertyPath: shop
       value: 
       objectReference: {fileID: 1599904867}
+    - target: {fileID: 2611324978155124913, guid: 9e8f247d147c20d4cb61b45e493d17dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 546680b1c33f2ac43901581b4628cb6a, type: 3}
     - target: {fileID: 2972441845257431328, guid: 9e8f247d147c20d4cb61b45e493d17dc, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -18273,6 +18281,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5743103111443579998, guid: f44b6a3a2d5a5664ea15e9726b47593a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56b8aa12255ecf840a31ff10fd6ca0c7, type: 3}
     - target: {fileID: 5743103112171351006, guid: f44b6a3a2d5a5664ea15e9726b47593a, type: 3}
       propertyPath: m_Camera
       value: 
@@ -18325,6 +18337,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 6284546177914372879, guid: f44b6a3a2d5a5664ea15e9726b47593a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284546178373338571, guid: f44b6a3a2d5a5664ea15e9726b47593a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 546680b1c33f2ac43901581b4628cb6a, type: 3}
     - target: {fileID: 6284546178605509186, guid: f44b6a3a2d5a5664ea15e9726b47593a, type: 3}
       propertyPath: m_Camera
       value: 
