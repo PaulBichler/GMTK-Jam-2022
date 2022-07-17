@@ -15,9 +15,10 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 6914fdf0537fe9a4bab72fef7a183100, type: 3}
   specialAbility: {fileID: 0}
   type: 0
-  damage: 50
-  attackRange: 50
-  attackSpeed: 50
+  damage: 10
+  attackRange: 4
+  attackSpeed: 2
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
-  shopWeight: 10
+  statRangeData: {fileID: 0}
+  shopWeight: 3
   description: 

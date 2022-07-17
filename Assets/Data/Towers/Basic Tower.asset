@@ -15,9 +15,10 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 587405d9a6469424a9217a834efe2261, type: 3}
   specialAbility: {fileID: 11400000, guid: d35bac0c25f4915488fcfe0ead7734cd, type: 2}
   type: 0
-  damage: 2
+  damage: 25
   attackRange: 3
-  attackSpeed: 2
+  attackSpeed: 4
   projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  statRangeData: {fileID: 0}
   shopWeight: 0
   description: Basic starting tower.

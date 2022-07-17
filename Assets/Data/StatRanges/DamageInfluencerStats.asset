@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92874dd127723fb46954929a630f5da5, type: 3}
-  m_Name: RollStatRanges
+  m_Name: DamageInfluencerStats
   m_EditorClassIdentifier: 
-  minDamage: 1
-  maxDamage: 50
-  minAttackSpeed: 1
-  maxAttackSpeed: 15
-  minAttackRange: 3
-  maxAttackRange: 40
+  minDamage: 10
+  maxDamage: 10
+  minAttackSpeed: 0
+  maxAttackSpeed: 0
+  minAttackRange: 0
+  maxAttackRange: 0

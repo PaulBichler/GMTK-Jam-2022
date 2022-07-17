@@ -15,10 +15,11 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 3327f8d705ea079479fb2e915177fc7a, type: 3}
   specialAbility: {fileID: 0}
   type: 0
-  damage: 4
-  attackRange: 2
-  attackSpeed: 1
+  damage: 30
+  attackRange: 3
+  attackSpeed: 2
   projectileData: {fileID: 11400000, guid: 9ea0e5b201f969c46ab80adb26fee1c3, type: 2}
-  shopWeight: 5
+  statRangeData: {fileID: 0}
+  shopWeight: 4
   description: The explosive tower shoots projectiles which explode upon impact dealing
     massive damage.
