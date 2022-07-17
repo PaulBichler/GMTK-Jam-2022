@@ -18,6 +18,9 @@ public class UiAnnouncer : MonoBehaviour
         messageDisplay.SetText(text);
         announcerPanel.SetActive(true);
 
+        if (duration < 0)
+            yield return null;
+
         yield return new WaitForSeconds(duration);
         
         messageDisplay.SetText("");

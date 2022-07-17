@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,7 +27,23 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        WaveCleared();
+        StartGame();
+    }
+
+    public void GameOver()
+    {
+        SetState(GameState.UiState);
+        UiManager.Instance.Announce("Game Over. Thanks for playing!", -1, null);
+    }
+
+    private void StartGame()
+    {
+        UiManager.Instance.Announce("Dicey Dungeon", 2, () =>
+        {
+            UiManager.Instance.TransitionToShop(ContinueToDiceCustomization);
+        });
+        
+        SetState(GameState.UiState);
     }
 
     private void SetState(GameState newState)
@@ -42,29 +57,16 @@ public class GameManager : MonoBehaviour
     public void ContinueToDiceRolling()
     {
         UiManager.Instance.TransitionToDiceRolling(StartNextRound);
-
-        //UiManager.Instance.EnableNextButton("Start Next Round", StartNextRound);
-
-
-
-        //SetState(GameState.PlacementState);
     }
 
     public void ContinueToDiceCustomization()
     {
         UiManager.Instance.TransitionToDiceCustomization(ContinueToDiceRolling);
-
-        //UiManager.Instance.EnableNextButton("Proceed to Rolling", ContinueToDiceRolling);
-
-        //SetState(GameState.PlacementState);
     }
 
     public void StartNextRound()
     {
-        //UiManager.Instance.HideShop
-
         UiManager.Instance.HideRolling();
-
         UiManager.Instance.DisableNextButton();
         
         UiManager.Instance.Announce("Place your towers!", 2, () =>
@@ -84,6 +86,12 @@ public class GameManager : MonoBehaviour
     {
         UiManager.Instance.Announce("Wave Cleared!", 2, () =>
         {
+            if (WaveManager.Instance.IsLastWave)
+            {
+                GameOver();
+                return;
+            }
+            
             UiManager.Instance.TransitionToShop(ContinueToDiceCustomization);
         });
         

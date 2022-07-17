@@ -10,8 +10,6 @@ public class PlayerManager : MonoBehaviour
     
     public static PlayerManager Instance { get; private set; }
 
-    public List<GameObject> AvailableTowers => availableTowers;
-
     private void Awake()
     {
         if (Instance)
@@ -25,6 +23,9 @@ public class PlayerManager : MonoBehaviour
     public void BaseCollision()
     {
         baseHealth--;
+        
+        if(baseHealth <= 0)
+            GameManager.Instance.GameOver();
     }
 
     public PlaceableUnit SpawnTower(TowerScriptableObject data)

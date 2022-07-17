@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour
     private int _enemyDeathCount;
 
     public static WaveManager Instance { get; private set; }
-    public int CurrentWave => _currentWaveIndex + 1;
+    public bool IsLastWave => _currentWaveIndex == waves.Count - 1;
     public UnityEvent OnWaveEnd { get; } = new();
 
     private void Awake()
