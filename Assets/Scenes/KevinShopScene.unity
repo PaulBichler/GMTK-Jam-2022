@@ -934,6 +934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coins
       objectReference: {fileID: 0}
+    - target: {fileID: 1766722401317391233, guid: 1decba3eaed62944691d969c02ce07cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56b8aa12255ecf840a31ff10fd6ca0c7, type: 3}
     - target: {fileID: 1766722401738908673, guid: 1decba3eaed62944691d969c02ce07cb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1166,7 +1170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84285f599fad79a438d683167e5eeaff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 546680b1c33f2ac43901581b4628cb6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -22,6 +22,16 @@ public class Currency : MonoBehaviour
         
     }
 
+    public void HideCurrency()
+    {
+        canvas.enabled = false;
+    }
+
+    public void ShowCurrency()
+    {
+        canvas.enabled = true;
+    }
+
     void UpdateCurrency() => currencyText.text = currency.ToString();
 
     public void ResetCurrency()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b98a3a3fab9904299a00c81bcffa21, type: 3}
   m_Name: Ice Tower
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 21300000, guid: eb70c7ff0c08608469d0789c712ba2cb, type: 3}
+  iconSprite: {fileID: 21300000, guid: 6914fdf0537fe9a4bab72fef7a183100, type: 3}
   specialAbility: {fileID: 0}
   type: 0
   damage: 50
