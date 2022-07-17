@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
     private readonly List<Transform> _path = new();
     private int _currentWaveIndex = -1;
     private List<Enemy> _activeEnemies;
+    private int _enemyDeathCount;
 
     public static WaveManager Instance { get; private set; }
     public int CurrentWave => _currentWaveIndex + 1;
@@ -35,7 +36,7 @@ public class WaveManager : MonoBehaviour
         
         if(onWaveEnd != null)
             OnWaveEnd.AddListener(onWaveEnd);
-            
+        
         StartCoroutine(StartWaveCoroutine(waves[++_currentWaveIndex]));
     }
 
@@ -62,8 +63,9 @@ public class WaveManager : MonoBehaviour
     {
         _activeEnemies.Remove(enemy);
         enemy.onDeath.RemoveListener(EnemyDied);
+        _enemyDeathCount++;
 
-        if (_activeEnemies.Count == 0)
+        if (_activeEnemies.Count == 0 && _enemyDeathCount == waves[_currentWaveIndex].EnemiesToSpawn.Count)
             OnWaveEnd?.Invoke();
     }
 }

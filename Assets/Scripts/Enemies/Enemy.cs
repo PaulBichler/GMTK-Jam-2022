@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IPathTraveler
     private Transform _currentDestination;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rb2d;
+    private bool _isDead;
 
     public UnityEvent<Enemy> onDeath;
 
@@ -55,7 +56,7 @@ public class Enemy : MonoBehaviour, IPathTraveler
         
         Data.health -= damageInfo.DamageToApply;
 
-        if (Data.health <= 0)
+        if (Data.health <= 0 && !_isDead)
             Die();
     }
 
@@ -73,6 +74,7 @@ public class Enemy : MonoBehaviour, IPathTraveler
 
     private void Die()
     {
+        _isDead = true;
         onDeath?.Invoke(this);
         Destroy(gameObject);
     }
