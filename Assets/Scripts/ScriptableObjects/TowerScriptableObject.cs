@@ -44,6 +44,10 @@ public class TowerScriptableObject : ScriptableObject
     [Title("Projectile", bold: false)]
     [HideLabel]
     public ProjectileData projectileData;
+    
+    [Title("Stat Range (for Roll Tower)", bold: false)]
+    [HideLabel]
+    public StatRangeData statRangeData;
 
     [Title("ShopWeight", bold: false)]
     [HideLabel]

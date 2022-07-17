@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum TowerState
 {
@@ -33,6 +35,15 @@ public abstract class TowerBase : PlaceableUnit
         if (IsInitialized) return;
         
         Data = Instantiate(data);
+
+        if (Data.statRangeData)
+        {
+            var statRanges = Data.statRangeData;
+            Data.damage = Random.Range(statRanges.minDamage, statRanges.maxDamage);
+            Data.attackSpeed = Random.Range(statRanges.minAttackSpeed, statRanges.maxAttackSpeed);
+            Data.attackRange = Random.Range(statRanges.minAttackRange, statRanges.maxAttackRange);
+        }
+        
         spriteRenderer.sprite = Data.iconSprite;
         EntityDetector.Initialize(this, Data.attackRange);
         IsInitialized = true;
