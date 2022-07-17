@@ -32,7 +32,7 @@ public class Currency : MonoBehaviour
         canvas.enabled = true;
     }
 
-    void UpdateCurrency() => currencyText.text = currency.ToString();
+    public void UpdateCurrency() => currencyText.text = currency.ToString();
 
     public void ResetCurrency()
     {

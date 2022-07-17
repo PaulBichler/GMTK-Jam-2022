@@ -896,7 +896,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -918913331
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3521484137918277590
@@ -1243,7 +1243,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -918913331
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &5445177977409154725
@@ -1321,7 +1321,7 @@ Transform:
   - {fileID: 8724900553465968818}
   - {fileID: 6767539211986061380}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5445177977987261811
 MonoBehaviour:

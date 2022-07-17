@@ -56,10 +56,14 @@ public class TowerDisplay : MonoBehaviour
     public void BuyTower()
     {
         if(currency.CanBuyTower())
+        {
             canvas.enabled = false;
+            shop.boughtTowerScriptableObjectList.Add(tower);
+        }
+            
         
-        if(UiManager.Instance)
-            UiManager.Instance.AddTowerToSelection(tower);
+        //if(UiManager.Instance)
+        //    UiManager.Instance.AddTowerToSelection(tower);
     }
 
 }

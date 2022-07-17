@@ -39,9 +39,32 @@ public class GameManager : MonoBehaviour
         _state = newState;
     }
 
+    public void ContinueToDiceRolling()
+    {
+        UiManager.Instance.TransitionToDiceRolling(StartNextRound);
+
+        //UiManager.Instance.EnableNextButton("Start Next Round", StartNextRound);
+
+
+
+        //SetState(GameState.PlacementState);
+    }
+
+    public void ContinueToDiceCustomization()
+    {
+        UiManager.Instance.TransitionToDiceCustomization(ContinueToDiceRolling);
+
+        //UiManager.Instance.EnableNextButton("Proceed to Rolling", ContinueToDiceRolling);
+
+        //SetState(GameState.PlacementState);
+    }
+
     public void StartNextRound()
     {
-        UiManager.Instance.HideShop();
+        //UiManager.Instance.HideShop
+
+        UiManager.Instance.HideRolling();
+
         UiManager.Instance.DisableNextButton();
         
         UiManager.Instance.Announce("Place your towers!", 2, () =>
@@ -61,7 +84,7 @@ public class GameManager : MonoBehaviour
     {
         UiManager.Instance.Announce("Wave Cleared!", 2, () =>
         {
-            UiManager.Instance.TransitionToShop(StartNextRound);
+            UiManager.Instance.TransitionToShop(ContinueToDiceCustomization);
         });
         
         SetState(GameState.UiState);
