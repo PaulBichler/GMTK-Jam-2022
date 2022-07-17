@@ -13618,6 +13618,8 @@ MonoBehaviour:
     prefabValue: {fileID: 6650594541804761083, guid: 5a54569d7b8e1b947819802d7266c144, type: 3}
   - dataKey: {fileID: 11400000, guid: abea877819da9714b8a41b608319afaa, type: 2}
     prefabValue: {fileID: 3766943813228930406, guid: ad674935ef186dc4da965d53ecbb48b7, type: 3}
+  - dataKey: {fileID: 11400000, guid: 9ea0e5b201f969c46ab80adb26fee1c3, type: 2}
+    prefabValue: {fileID: 6650594541804761083, guid: 5a54569d7b8e1b947819802d7266c144, type: 3}
 --- !u!1 &1486186759
 GameObject:
   m_ObjectHideFlags: 0

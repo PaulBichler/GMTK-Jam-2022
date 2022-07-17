@@ -6,5 +6,5 @@ public class ProjectileData : ScriptableObject
     public Sprite sprite;
     public float speed;
     public float aoeRange = -1;
-    public float aoeDamage = -1;
+    public float aoeDamageMultiplier = -1;
 }

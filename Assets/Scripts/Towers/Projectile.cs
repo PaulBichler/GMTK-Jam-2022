@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     protected Rigidbody2D Rb2d;
     protected DamageInfo DamageInfo;
-    protected float Speed;
+    protected ProjectileData Data;
 
     private void Awake()
     {
@@ -13,13 +15,13 @@ public class Projectile : MonoBehaviour
 
     public void Initialize(ProjectileData data)
     {
-        Speed = data.speed;
+        Data = Instantiate(data);
     }
 
     public virtual void LaunchBullet(Transform owner, Transform target, DamageInfo damageInfo)
     {
         Vector2 dir = (target.position - owner.position).normalized;
-        Rb2d.velocity = dir * Speed;
+        Rb2d.velocity = dir * Data.speed;
         DamageInfo = damageInfo;
     }
 
@@ -28,7 +30,25 @@ public class Projectile : MonoBehaviour
         if (col.gameObject.TryGetComponent<Enemy>(out var enemy))
         {
             enemy.ReceiveDamage(DamageInfo);
+            
+            if(Data.aoeRange > 0)
+                DoAoeDamage(transform.position);
+            
             Destroy(gameObject);
+        }
+    }
+
+    protected virtual void DoAoeDamage(Vector2 impactPosition)
+    {
+        Collider2D[] colls = Physics2D.OverlapCircleAll(impactPosition, Data.aoeRange);
+
+        if (colls.Length > 0)
+        {
+            foreach (var coll in colls)
+            {
+                if(coll.TryGetComponent<Enemy>(out var enemy))
+                    enemy.ReceiveDamage(new DamageInfo(DamageInfo.DamageToApply * Data.aoeDamageMultiplier));
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
   damage: 4
   attackRange: 2
   attackSpeed: 1
-  projectileData: {fileID: 11400000, guid: e2c8a084a5700eb41956b4e05faec936, type: 2}
+  projectileData: {fileID: 11400000, guid: 9ea0e5b201f969c46ab80adb26fee1c3, type: 2}
   shopWeight: 5
   description: The explosive tower shoots projectiles which explode upon impact dealing
     massive damage.

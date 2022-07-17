@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class NormalTower : AttackTowerBase
 {
     protected override void Attack(Enemy target)
