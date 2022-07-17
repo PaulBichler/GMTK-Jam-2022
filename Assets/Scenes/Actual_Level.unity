@@ -4581,7 +4581,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 11400000, guid: 9860ec76c6ec37844835142979fb1b2f, type: 2}
+  - {fileID: 11400000, guid: ec3c53447e45d374aa8ae70ed2e22042, type: 2}
   - {fileID: 11400000, guid: 5f0b4ba020e8e1b419f4e50a89439d2d, type: 2}
+  - {fileID: 11400000, guid: 73a9b7a1f3608cc4da255c1f20fb908b, type: 2}
+  - {fileID: 11400000, guid: 9ef1e5df715770943bc78f9275352228, type: 2}
+  - {fileID: 11400000, guid: df16487c98c52ba4a802611b11632202, type: 2}
   pathParent: {fileID: 1214008850}
 --- !u!1 &395552624
 GameObject:
@@ -13586,6 +13591,10 @@ MonoBehaviour:
   enemyPrefabDictionary:
   - dataKey: {fileID: 11400000, guid: bbfd2d8641fd92241b4e595cac5c1505, type: 2}
     prefabValue: {fileID: 6949135155648364671, guid: dc109d5837a9dd241afa1583bfc6ab3c, type: 3}
+  - dataKey: {fileID: 11400000, guid: 88494ca53ac19c14b9828ac18561266d, type: 2}
+    prefabValue: {fileID: 6949135155648364671, guid: bd6e0a5086bc7b548966d95588fc56f7, type: 3}
+  - dataKey: {fileID: 11400000, guid: c8d3f02e9c494694a972d866bdde18bb, type: 2}
+    prefabValue: {fileID: 6949135155648364671, guid: 5fcbddd6119177848a0a1164dbbdbaaa, type: 3}
 --- !u!114 &1477397851
 MonoBehaviour:
   m_ObjectHideFlags: 0
