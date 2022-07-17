@@ -84,14 +84,14 @@ public class GameManager : MonoBehaviour
 
     public void WaveCleared()
     {
+        if (WaveManager.Instance.IsLastWave)
+        {
+            GameOver();
+            return;
+        }
+        
         UiManager.Instance.Announce("Wave Cleared!", 2, () =>
         {
-            if (WaveManager.Instance.IsLastWave)
-            {
-                GameOver();
-                return;
-            }
-            
             UiManager.Instance.TransitionToShop(ContinueToDiceCustomization);
         });
         

@@ -19,7 +19,7 @@ public class UiAnnouncer : MonoBehaviour
         announcerPanel.SetActive(true);
 
         if (duration < 0)
-            yield return null;
+            yield break;
 
         yield return new WaitForSeconds(duration);
         
