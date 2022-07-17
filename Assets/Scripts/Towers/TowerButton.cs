@@ -17,7 +17,20 @@ public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void UpdateIcon()
     {
-        _image.sprite = tower ? tower.iconSprite : null;
+        Color color = _image.color;
+        
+        if (tower)
+        {
+            _image.sprite = tower.iconSprite;
+            color.a = 1;
+        }
+        else
+        {
+            _image.sprite = null;
+            color.a = 0;
+        }
+        
+        _image.color = color;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -31,7 +44,9 @@ public class TowerButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         if (!_spawnedTower) return;
+        
         _spawnedTower.OnPointerUp(eventData);
+        SetTower(null);
     }
 
     public void SetTower(TowerScriptableObject towerData)
